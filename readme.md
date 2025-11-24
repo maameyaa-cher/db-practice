@@ -46,6 +46,7 @@ alembic upgrade head
 ```
 
 ## Project Structure (haven't merged with actual repo or anything yet)
+```bash
 ├── database/          # Database engine, session, and Base
 ├── models/            # SQLAlchemy models
 ├── schemas/           # Pydantic schemas
@@ -53,3 +54,4 @@ alembic upgrade head
 ├── alembic/           # Database migration scripts
 └── docs/
     └── schema.md      # Database schema documentation
+```
