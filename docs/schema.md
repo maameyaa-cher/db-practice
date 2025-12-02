@@ -10,7 +10,7 @@ Describes organizations where users belong.
 
 | Column | Type | Constraints |
 |--------|------|-------------|
-| id | bigint, uuid | Primary key |
+| id | bigint | Primary key |
 | name | string | Required, Optional index |
 | created_at | timestamp | Default: now |
 | updated_at | timestamp | Auto-updated on change |
@@ -24,7 +24,7 @@ Describes lender side users.
 
 | Column | Type | Constraints |
 |--------|------|-------------|
-| id | bigint, uuid | Primary key |
+| id | bigint | Primary key |
 | organization_id | bigint | Foreign key → organizations.id |
 | email | string | Required, Unique |
 | hashed_password | string | Required |
@@ -44,7 +44,7 @@ Describes borrowers whose 1003 applications are being managed.
 
 | Column | Type | Constraints |
 |--------|------|-------------|
-| id | bigint, uuid | Primary key |
+| id | bigint | Primary key |
 | organization_id | bigint | Foreign key → organizations.id |
 | email | string | Nullable |
 | phone | string | Nullable |
@@ -64,7 +64,7 @@ Describes 1003 applications.
 
 | Column | Type | Constraints |
 |--------|------|-------------|
-| id | bigint, uuid | Primary key |
+| id | bigint | Primary key |
 | organization_id | bigint | Foreign key → organizations.id, Indexed |
 | borrower_id | bigint | Foreign key → borrowers.id, Indexed |
 | loan_number | string | Nullable |
@@ -83,7 +83,7 @@ Uploaded documents tied to an application.
 
 | Column | Type | Constraints |
 |--------|------|-------------|
-| id | bigint, uuid | Primary key |
+| id | bigint | Primary key |
 | organization_id | bigint | Foreign key → organizations.id, Indexed |
 | application_id | bigint | Foreign key → applications.id, Indexed |
 | uploaded_by_user_id | bigint | Foreign key → users.id |
