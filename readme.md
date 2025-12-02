@@ -3,9 +3,9 @@
 ## What's Included
 
 - Dockerized PostgreSQL
-- SQLAlchemy ORM with a shared Base
+- SQLAlchemy ORM 
 - Alembic migrations
-- Basic project structure and database schema doc
+- Core project structure for database models and migrations
 
 ## Requirements
 
@@ -28,7 +28,7 @@ DATABASE_URL=postgresql+psycopg2://user:password@localhost:5432/mydatabase
 
 ### 3. Start Database
 ```bash
-#launch containfer
+#launch containter
 docker-compose up -d
 
 #verify if running
@@ -47,11 +47,16 @@ alembic upgrade head
 
 ## Project Structure (haven't merged with actual repo or anything yet)
 ```bash
-├── database/          # Database engine, session, and Base
-├── models/            # SQLAlchemy models
-├── schemas/           # Pydantic schemas
-├── routes/            # FastAPI endpoints
-├── alembic/           # Database migration scripts
-└── docs/
-    └── schema.md      # Database schema documentation
+app/
+  core/               # Engine, session, Base, get_db
+  models/             # SQLAlchemy models
+  repositories/       # Data access layer
+  api/                # Endpoint files (empty for now)
+alembic/              # Migration environment and versions
+docs/
+  schema.md           # Database schema
+.env.example
+docker-compose.yml
+alembic.ini
+readme.md
 ```
