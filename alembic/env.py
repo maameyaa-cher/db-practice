@@ -8,6 +8,12 @@ from alembic import context
 
 from dotenv import load_dotenv
 from app.models.organization import Organization
+from app.models.user import User
+from app.models.communication_log import CommunicationLog
+from app.models.audit_trail import AuditTrail           
+from app.models.application import Application
+from app.models.borrower import Borrower
+from app.models.document import Document
 
 load_dotenv()
 import os
