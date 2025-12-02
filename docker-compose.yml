@@ -1,17 +1,11 @@
+# Base docker-compose.yml
+# Contains common settings for all environments
 version: '3.8'
 
 services:
-  db:
-    image: postgres:latest   # Use the official Postgres image
-    environment:
-      POSTGRES_USER: user     # Username for Postgres
-      POSTGRES_PASSWORD: password  # Password for Postgres
-      POSTGRES_DB: mydatabase  # Name of the database
+  backend:
+    build: .
     ports:
-      - "5432:5432"  # Expose Postgres on port 5432
-    volumes:
-      - postgres_data:/var/lib/postgresql  # Persist data across container restarts
-
-volumes:
-  postgres_data:
-    driver: local
+      - "8000:8000"
+    env_file:
+      - ./.env
